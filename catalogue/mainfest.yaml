@@ -15,22 +15,22 @@ metadata:
     tier: app
 spec:
   containers:
-    - name: catalogue
-      imagepullpolicy: Always
-      image: prasanth369/catalogue:v1
-      envFrom:
-      - configMapRef: 
-          name: catalogue-config
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "128Mi"
-          limits:
-            cpu: "100m"
-            memory: "128Mi"
+  - name: catalogue
+    imagePullPolicy: Always
+    image: techworldwithsiva/catalogue:v1
+    envFrom:
+    - configMapRef:
+        name: catalogue-config
+    resources:
+      requests:
+        cpu: "100m"
+        memory: "128Mi"
+      limits:
+        cpu: "100m"
+        memory: "128Mi"
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: catalogue
 spec:
@@ -41,6 +41,3 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-
-
-
