@@ -13,13 +13,13 @@ metadata:
   labels:
     name: catalogue
     tier: app
-  spec:
-    containers:
-      - name: catalogue
-        imagepullpolicy: Always
-        image: prasanth369/catalogue:v1
-        envFrom:
-        - configMapRef: 
+spec:
+  containers:
+    - name: catalogue
+      imagepullpolicy: Always
+      image: prasanth369/catalogue:v1
+      envFrom:
+      - configMapRef: 
           name: catalogue-config
         resources:
           requests:
